@@ -1,1 +1,1 @@
-This is a new file in a new branch.
+This was a file initialised with the branch; it is now changed.
