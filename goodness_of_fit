@@ -1,0 +1,14 @@
+def goodnessf(xdata, ydata, res): #Goodness-of-fit function, lower result = better
+#This function takes as input the x- and y-values of a given curve to fit, and the residual of a function which fits the curve.
+#It outputs a number which represents how well the function fits the curve.
+    sqintegral = 0
+    sqresint = 0
+    funcint = 0
+    resint = 0
+    for i in range(len(xdata)-1):
+        sqintegral += ((xdata[i+1]-xdata[i])*ydata[i+1])**2/ydata[i+1]
+        sqresint += ((xdata[i+1]-xdata[i])*res[i+1])**2/ydata[i+1]
+        funcint += abs(((xdata[i+1]-xdata[i])*ydata[i+1]))
+        resint += abs(((xdata[i+1]-xdata[i])*res[i+1]))
+    #return sqresint/sqintegral
+    return resint/funcint
